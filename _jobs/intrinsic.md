@@ -5,7 +5,7 @@ order: b
 image: "3.jpg"
 ---
 
-Työskentelin Intrinsic -nimisessä ohjelmistoyrityksessä Tampereella systeemisuunnittelijana. Toteutimme ja ylläpidimme asiakkaiden tarpeisiin räätälöityjä järjestelmiä.
+Työskentelin Intrinsicissä systeemisuunnittelijana. Toteutimme ja ylläpidimme asiakkaiden tarpeisiin räätälöityjä järjestelmiä.
 
 Intrinsic on ollut mukana esimerkiksi toteuttamassa Suomen tiesää- ja kelikeskusjärjestelmiä. Tästä on avautunut minulle kiehtovia näkökulmia mm. älykkään liikenteen ja avoimen datan maailmoihin. 
 

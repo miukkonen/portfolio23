@@ -1,9 +1,8 @@
 name: Dynamic Portfolio
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-title: mikkoo.me
-# pitääkö tää poistaa
-site.title: site mikkoo.me
+title: Mikko Oikkonen
+description: Dynaaminen Portfolio
 url: "https://miukkonen.github.io/portfolio23"   #https://mikkoo.me" # "https://mmoi.github.io/mikkoo"
 baseurl: "/" # "/"
 

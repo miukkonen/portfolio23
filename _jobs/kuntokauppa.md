@@ -1,8 +1,8 @@
 ---
-title: "Nordic Sport Brands Oy"
-subtitle: "2021 - "
+title: "Nordic Sports Brands Oy"
+subtitle: "2021 - 2023"
 order: a
 image: "4.jpg"
 ---
 
-Tällä hetkellä työskentelen Nordic Sports Brandsillä Full Stack -webkehittäjänä.
+Nordic Sports Brands Oy:ssä olin mukana Scrum -tiimissä joka kehitti räjähdysmäisessä kasvussa ollutta kuntokauppa.fi verkkokauppaa.

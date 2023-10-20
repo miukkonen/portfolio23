@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>{{ page.title }} | {{ page.description }}</title>
+        <title>{{ site.title }} - {{ site.description }}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -28,9 +28,9 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Esittely</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projektit</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#jobs">Työkokemus</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Ominaisuudet</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Kyvykkyys</a></li>
                         
                     </ul>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
 
-                        <p class="text-white-75 font-weight-light mb-5">Julkinen, henkilökohtainen, dynaaminen ja ammatillinen portfolio ja ansioluettelo</p>
+                        <p class="text-white-75 font-weight-light mb-5">Julkinen, henkilökohtainen, ammatillinen, harrastuksellinen<br />ja dynaaminen portfolio ja ansioluettelo</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Tutustu</a>
                     </div>
                 </div>
@@ -57,19 +57,19 @@
 
 
         <!-- About-->
-        <section class="page-section bg-primary" id="about">
+        <section class="page-section bg-light" id="about">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Esittely</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">
-                            Olen Mikko Oikkonen, Full Stack Webbikehittäjä. Tämä sivu on ammatillinen nurkkaukseni netissä, jossa esittelen projektejani sekä työkokemustani ohjelmistoalalta.
+                        <h2 class="text-white-i mt-0">Esittely</h2>
+                        <hr class="divider my-4" />
+                        <p class="text-white-i mb-4">
+                            Olen Mikko Oikkonen, Full Stack Webbikehittäjä. Tämä sivu on ammatillinen suomenkielinen nurkkaukseni netissä, jossa esittelen projektejani sekä työkokemustani ohjelmistoalalta.
                         </p>
-                        <p class="text-white-50 mb-4">
-                            Ota yhteyttä! Kerron mielelläni lisää ja tulen työhaastatteluun.
+                        <p class="text-white-i mb-4">
+                            Ota yhteyttä! Kerron mielelläni lisää itsestäni ja tulen työhaastatteluun.
                         </p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#projects">Projektit</a>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#projects">Portfolio</a>
                     </div>
                 </div>
             </div>
@@ -86,29 +86,51 @@
                         <p class="mb-4">
                             Kokoan tähän relevantteja julkisia ohjelmointityönäytteitä
                         </p>
+                    
+                        {% assign visible_projects = site.projects | where: "show", "true" %}
+
+                        {% for project in visible_projects %}
+
+                            <article class="px-5 py-5 bg-light mt-5 rounded">
+
+                                <h3 class="mt-3">{{ project.title }}</h3>
+                                <p class="font-italic mt-3">{{ project.subtitle }}</p>
+                                <p class="mt-3"><a href="{{ project.link }}">{{ project.link }}</a></p>
+                                {{ project.content }}
+
+                            </article>
+
+                        {% endfor %}  
+
                     </div>
                 </div>
             </div>
+
         </section>
 
 
 
         <!-- Jobs -->
-        <section class="page-section" id="jobs">
+        <section class="page-section bg-light" id="jobs">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Dynaaminen portfolio ja ansioluettelo</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">
-
-        Olen Mikko Oikkonen, ohjelmistokehitystyöläinen. Tämä sivu on ammatillinen portfolioni, dynaaminen ansioluetteloni netissä.
-
-
-                Olen innostunut lisäarvon tuottamisesta asiakkaille. Haluaisin mukaan innovatiiviseen tiimiin jossa kehittyisin entistä taitavammaksi ohjelmistokehittäjäksi.
-
+                        <h2 class="mt-0">Kokemus</h2>
+                        <hr class="divider my-4" />
+                        <p class="mb-4">
+                            Viimeisin työkokemukseni ohjelmistoalalta käänteisessä aikajärjestyksessä
                         </p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#projects">Projektit</a>
+                        
+                        {% assign jobs_in_order = site.jobs | sort: "order" %}
+
+                        {% for job in jobs_in_order %}
+
+                            <h3 class="mt-5">{{ job.title }}</h3>
+                            <h4>{{ job.subtitle }}</h4>
+                            {{ job.content }}
+                            
+                        {% endfor %}                    
+
                     </div>
                 </div>
             </div>
@@ -119,44 +141,40 @@
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
-                <h2 class="text-center mt-0">Sisältöä</h2>
-                <hr class="divider my-4" />
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-torah text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Sapattitekstit</h3>
-                            <p class="text-muted mb-0">Viikoittaiset sapattitekstit valikoiduista lukujaksoista.</p>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+
+                        <h2 class="text-center mt-0">Kyvykkyys</h2>
+                        <hr class="divider my-4" />
+                        
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-church text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Kirkkovuosi</h3>
-                            <p class="text-muted mb-0">Kirkkovuoden aiheita käsiteltynä tuoreella ja henkilökohtaisella tasolla.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-bible text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Raamatun opiskelun helmiä</h3>
-                            <p class="text-muted mb-0">Kulloinkin läpikäymäni kokonaisuudet seikkaperäisesti ryhmiteltyinä.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Oivalluksia</h3>
-                            <p class="text-muted mb-0">Hämmästyttäviä löytöjä ikuisista opetuksista innostavasti kerrottuna.</p>
-                        </div>
-                    </div>
+
                 </div>
+
+                <div class="row text-center">
+
+                    {% assign feats_in_order = site.feats | sort: "order" %}
+
+                    {% for f in feats_in_order %}
+
+                        <div class="col-lg-4 col-sm-6 mt-5">
+                            <i class="fas fa-3x fa-{{ f.icon }} text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">{{ f.heading }}</h3>
+                            <p class="text-muted mb-0">{{ f.description }}</p>
+                        </div>
+                    
+                    {% endfor %}
+    
+                </div>
+
             </div>
         </section>
 
+
+
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted">Päivitetty 20.10.2023 - mikkoo.me dynaaminen portfolio</div></div>
+            <div class="container"><div class="small text-center text-muted">Päivitetty 26.10.2023 - mikkoo.me Dynaaminen Portfolio</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

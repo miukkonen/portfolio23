@@ -12,3 +12,7 @@ Sivujen päivittäminen on kätevää sillä se tapahtuu Gitin kautta. Muokkauks
 Sivun pohjana on Start Bootstrap Creative -teema.
 
 Hostaus GitHubissa on ilmaista. HTTPS-suojaus on ilmainen. Maksan vain omasta verkkotunnuksesta DNS-palveluntarjoajalleni.
+
+Portfoliosivun GitHub -repositorio löytyy täältä:
+
+[https://github.com/miukkonen/portfolio23](https://github.com/miukkonen/portfolio23)

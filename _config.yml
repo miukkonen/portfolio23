@@ -3,13 +3,10 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 title: Mikko Oikkonen
 description: Dynaaminen Portfolio
-url: "https://miukkonen.github.io/portfolio23"   #https://mikkoo.me" # "https://mmoi.github.io/mikkoo"
-baseurl: "/" # "/"
-
-#exclude: [sass]
+url: "https://mikkoo.me"
+baseurl: "/"
 
 collections:
   - jobs
   - projects
   - feats
-
